@@ -50,3 +50,11 @@ figcaption {
   text-align: right;
 }
 
+@media screen and (max-width: 500px) {
+  body {
+    background-color: salmon;
+    font-size: 50%;
+  }
+img{width: 50%;
+  }
+}
