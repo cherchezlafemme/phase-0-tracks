@@ -1,3 +1,8 @@
+body {
+  max-width: 100%;
+  min-width: 30%
+}
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -7,6 +12,22 @@ blockquote {
 cite {
   display: block;
   margin-top: 10px;
+}
+
+section#external-links {
+  max-width: 20%;
+  display: inline-block;
+  float: left;
+  padding: 15px
+  min-width: 10%;
+}
+
+main {
+  max-width: 80%;
+  display: inline-block;
+  float: right;
+  padding: 15px
+  min-width: 10%;
 }
 
 #external-links ul {
@@ -29,4 +50,13 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: salmon;
+    font-size: 50%;
+  }
+img{width: 50%;
+  }
 }
