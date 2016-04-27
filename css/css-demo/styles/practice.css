@@ -11,3 +11,9 @@ section#contact-info {
 .small {
   font-size: .8em
 }
+h1#resume-title:first-letter {
+font-size: 200%
+}
+ul>li {
+ color: green; 
+}
