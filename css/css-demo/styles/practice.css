@@ -1,0 +1,19 @@
+section#contact-info {
+  font-size: .8em
+}
+.job {
+  background-color: #e9e5dc;
+  border-radius: 25px;
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.small {
+  font-size: .8em
+}
+h1#resume-title:first-letter {
+font-size: 200%
+}
+ul>li {
+ color: green; 
+}
