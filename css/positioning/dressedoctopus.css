@@ -1,0 +1,21 @@
+.img {
+  margin-left: 40%;
+  margin-top: 10%
+}
+div#Octopus {
+  position: absolute;
+  z-index: -1;
+}
+div#Hat {
+  position: absolute; 
+  z-index: 1;
+  left: -5px;
+  top: -60px;
+
+}
+div#Glasses {
+position: absolute;
+z-index: 2;
+left: 50px;
+top: 108px;
+}
