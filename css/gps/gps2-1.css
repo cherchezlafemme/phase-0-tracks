@@ -1,3 +1,47 @@
-body {
-  background-color: blue;
+body{
+  background: red;
+}
+.column-1{
+  background: blue;
+  position: relative;
+  display: inline-block;
+  width:50%;
+  float:left;
+  vertical-align:top;
+  padding:5px;
+  margin: 5px;
+  margin-bottom:10px;
+  height: 1000px;
+  font-family: sans-serif;
+  
+}
+.column-2{
+  background:green;
+  position: relative;
+  display: inline-block;
+  width:50%
+  vertical-align:top;
+  float:right;
+  padding:5px;
+  margin:5px;
+  margin-bottom:10px;
+  height: 1000px;
+  font-family: sans-serif;
+}
+h1{
+color: purple;
+}
+
+h2 {
+  font-style: italic;
+}
+
+h2:hover {
+  color: salmon;
+}
+
+footer {
+  display: inline-block;
+  width: 100%;
+  background-color: yellow;
 }
