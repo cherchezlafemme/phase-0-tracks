@@ -1,0 +1,37 @@
+#Robot: use the elevator task.
+
+Enter the elevator.
+Once you are inside the elevator:
+	-find a panel with the buttons of each floor you can possibly go;
+	-ask what floor you need to press;
+	-until you hear an answer, wait for response 30 sec;
+	-if no answer, ask one more time which floor to go;
+	-until you hear an answer, wait for response 30 sec;
+	-if you hear no answer exit the elevator;
+	-if you here the answer, make note of the number that is told to you;
+	-once you know the floor you should be going, compare the value with the value on the buttons on the floor list panel in the elevator;
+	-once you found a match, press it;
+	-once elevator stops moving and opens the door, exit it.
+Congratulations, you arrived!
+The end.
+
+
+#Get inside your house.
+
+Locate your door. Once you know which door is leading to your home, you 
+need to find a key to the door:
+- If you open your bag, look for a key, and you find it,
+	- you can insert the key inside the lock and turn in to the right twice, 180 degrees; Congratulations! You are inside the house.
+- Elsif you need to check your pockets for a key;
+	- once key is located, insert it in the lock, turn twice to right 180 degrees and enter the house.
+- Elsif check your bag once again. You can dump everything from your bag on the floor to make sure you checked it well. Check all the hidden pockets; 
+	-hopefully, by now you have a key in your hand and you are inserting it in the lock, turning twice to the right and making happy dance moves inside your house.
+- Else, you need to find your cell phone and call your husband/wife/roommate for help. 
+
+In order to find your cell phone follow the following steps:
+- Check your pockets, if the phone found, great! You now can call your husband/wife/roommate and explain why you are standing outside the house with no chance to entering it and coming up with a plan where you will be waiting while they are on their way to rescue you and open the door for 
+you.
+- Unless you found your cell phone, repeat checking your pockets and the bag for the next 10 minutes; After 10 min, use the phone to call for help or...
+- Once you are sure, you have no phone on you, you may consider starting the path of proving the world that those trips to the GIM was very useful, once you will be climbing the wall in order to get inside your own house by breaking in through the window/balcony. Good luck with that!
+
+End. 
