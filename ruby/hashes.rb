@@ -64,26 +64,27 @@ if update_status.downcase == "some"
           else new_category = category.to_sym
           end
 
-  p new_category
+  puts "Please, write your new updated information now."
+  new_value = gets.chomp
 
-    #compare the entry with existing symbol classes
-   
-    #Update the value in this 
-    #But if the designer enters "decor_theme" (for example), your program should ask for a new value and update the :decor_theme key. (Hint: Strings have methods that will turn them into symbols, which would be quite handy here.) 
-    #You can assume the user will correctly input a key that exists in your hash -- no need to handle user errors.
-
-
-
+#Replace old entry with the new, client_profile{new_categor, new_value}
+client_profile.select {|key, value| client_profile[new_category] = new_value}
+  
 elsif update_status.downcase == "none"
   puts "Awesome! Your client profile is done!"
 else puts "I guess, you are all done."
 end
 
-
-#Update the hash if changes has been made
-
 #Print the latest version of the hash
-puts client_profile
+puts 
+"This is your client profile:
+Name: #{name}
+Age: #{age} 
+Number of kids: #{number_of_kids}
+Decor theme: #{decor_theme} 
+Favorite color: #{fav_color} 
+The client has pet: #{pet_owner} 
+Any special requirements: #{requirements}"
 
 #Exit the program
 puts "The end"
