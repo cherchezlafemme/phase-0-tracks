@@ -52,39 +52,41 @@ client_profile = {
 puts "Do you want to add any updates about client? some/none"
 update_status = gets.chomp
 
-#Allow designer to update keys' values.
-if update_status.downcase == "some"
-  puts "Please, enter the name of category the you want to update. (If you need help, enter see the list)"
-  category = gets.chomp
-        #Offer help: list of the categories designer can update.
-        if category.downcase == "see the list" || category.downcase == "the list" || category.downcase == "list"
-          puts "Here is the list: name, age, number_of_kids, decor_theme, fav_color, pet_owner, special_requirements"
-          puts "Please, enter the name of category the you want to update."
-          new_category = gets.chomp.to_sym
-          else new_category = category.to_sym
+          #Allow designer to update keys' values.
+          if update_status.downcase == "some"
+            puts "Please, enter the name of category the you want to update. (If you need help, enter see the list)"
+            category = gets.chomp
+                  #Offer help: list of the categories designer can update.
+                  if category.downcase == "see the list" || category.downcase == "the list" || category.downcase == "list"
+                    puts "Here is the list: name, age, number_of_kids, decor_theme, fav_color, pet_owner, special_requirements"
+                    puts "Please, enter the name of category the you want to update."
+                    new_category = gets.chomp.to_sym
+                    else new_category = category.to_sym
+                    end
+
+            puts "Please, write your new updated information now."
+            new_value = gets.chomp
+
+          #Replace old entry with the new, client_profile{new_categor, new_value}
+          client_profile[new_category] = new_value
+            
+          elsif update_status.downcase == "none"
+            puts "Awesome! Your client profile is done!"
+          else puts "I guess, you are all done."
           end
 
-  puts "Please, write your new updated information now."
-  new_value = gets.chomp
-
-#Replace old entry with the new, client_profile{new_categor, new_value}
-client_profile.select {|key, value| client_profile[new_category] = new_value}
-  
-elsif update_status.downcase == "none"
-  puts "Awesome! Your client profile is done!"
-else puts "I guess, you are all done."
-end
-
 #Print the latest version of the hash
-puts 
-"This is your client profile:
-Name: #{name}
-Age: #{age} 
-Number of kids: #{number_of_kids}
-Decor theme: #{decor_theme} 
-Favorite color: #{fav_color} 
-The client has pet: #{pet_owner} 
-Any special requirements: #{requirements}"
+p client_profile
+
+#Show the information about the client on the screen
+puts "This is your client profile:
+Name: #{client_profile[:name]}
+Age: #{client_profile[:age]} 
+Number of kids: #{client_profile[:number_of_kids]}
+Decor theme: #{client_profile[:decor_theme]} 
+Favorite color: #{client_profile[:fav_color]} 
+The client has pet: #{client_profile[:pet_owner]} 
+Any special requirements: #{client_profile[:special_requirements]}"
 
 #Exit the program
 puts "The end"
