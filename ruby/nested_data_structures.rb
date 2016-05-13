@@ -7,27 +7,37 @@ key = "put the key"
 
 wine_of_France = {
 
-Bordeaux: { red_wine:
-                    {   Medoc_region: 
-                                      {Medoc_AC: ["Cabernet Sauvignon", "Cabernet Franc", "Merlot", "Petit verdot", "Malbec"],
-                                      Margaux_AC:
-                                                {red_grapes: ["Cabernet Sauvignon", "Cabernet Franc", "Merlot", "Petit verdot"],
-                                                  famous_wines: "Château Margaux"},
-                                      St_Julien_AC: ["Cabernet Sauvignon", "Cabernet Franc", "Merlot", "Petit verdot"],
-                                      Pauillac_AC: 
-                                                {red_grapes: 
-                                                ["Cabernet Sauvignon", "Cabernet Franc", "Merlot", "Petit verdot", "Malbec"], 
-                                                famous_wines: ["Château Latour", "Château Lafite-Rothschild", "Château Mouton-Rothschild"]}
+Bordeaux: { table_wine:
+                    {   Medoc_region: {
+                                      sub_regions:
+                                                {
+                                                Medoc_AC: ["Cabernet Sauvignon", "Cabernet Franc", "Merlot", "Petit verdot", "Malbec"],
+                                                Margaux_AC:
+                                                          {red_grapes: ["Cabernet Sauvignon", "Cabernet Franc", "Merlot", "Petit verdot"],
+                                                            famous_wines: "Château Margaux"},
+                                                St_Julien_AC: ["Cabernet Sauvignon", "Cabernet Franc", "Merlot", "Petit verdot"],
+                                                Pauillac_AC: 
+                                                          {red_grapes: 
+                                                                  ["Cabernet Sauvignon", "Cabernet Franc", "Merlot", "Petit verdot", "Malbec"], 
+                                                          famous_wines: 
+                                                                  ["Château Latour", "Château Lafite-Rothschild", "Château Mouton-Rothschild"]
+                                                          },
+                                                St_Estephe_AC: ["Cabernet Sauvignon", "Cabernet Franc", "Merlot", "Petit verdot"]
+                                                },
+                                      ready_to_drink_years: "Incredible aging potential. Can age for decades. Main grape is Cabernet Sauvignon."
                                       },
-                        St_Estephe: value,
-                        St_Emillion: value,
-                        Pomerol: value,
-                        Graves: value,
-                        #famous_wines: "Château Haut-Brion Pessac"
-                        Pessac_Leognan: value,
-                        Sauternes: value
+                        St_Emillion: {red_grapes: ["Merlot", "Cabernet Franc", "Malbec"], 
+                                      ready_to_drink_years: "Softer Bordeaux wines, drinkable at the earlier age. Main grape is Merlot."},
+                        Pomerol: {red_grapes: ["Merlot", "Cabernet Franc", "Cabernet Sauvignon"], 
+                                      ready_to_drink_years: "Rich and lush wines with amazing aging potential that can be compared to the Medoc region. 
+                                      Can age up to 40 years. Main grape is Merlot, Cabernet Sauvignon and Cabernet Franc are used only for blending."},
+                        Graves: {red_grapes: ["Cabernet Sauvignon", "Cabernet Franc", "Merlot"], 
+                                famous_wines: "Château Haut-Brion Pessac"},
+                        Pessac_Leognan: {red_grapes: ["Cabernet Sauvignon", "Cabernet Franc", "Merlot"],
+                                        white_grapes: ["Sauvignon Blanc", "Semillion", "Muscadelle"]}
                      },
-             white_wine: value },
+            dessert_wine: {Sauternes: ["Semillion", "Sauvignon Blanc", "Muscadelle"]}
+          },
 
 Burgundy: {key: value},
 
