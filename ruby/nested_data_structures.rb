@@ -7,10 +7,27 @@ key = "put the key"
 
 wine_of_France = {
 
-Bordeaux: {
-  white_wine: value,
-  red_wine: value,
-},
+Bordeaux: { red_wine:
+                    {   Medoc_region: 
+                                      {Medoc_AC: ["Cabernet Sauvignon", "Cabernet Franc", "Merlot", "Petit verdot", "Malbec"],
+                                      Margaux_AC:
+                                                {red_grapes: ["Cabernet Sauvignon", "Cabernet Franc", "Merlot", "Petit verdot"],
+                                                  famous_wines: "Château Margaux"},
+                                      St_Julien_AC: ["Cabernet Sauvignon", "Cabernet Franc", "Merlot", "Petit verdot"],
+                                      Pauillac_AC: 
+                                                {red_grapes: 
+                                                ["Cabernet Sauvignon", "Cabernet Franc", "Merlot", "Petit verdot", "Malbec"], 
+                                                famous_wines: ["Château Latour", "Château Lafite-Rothschild", "Château Mouton-Rothschild"]}
+                                      },
+                        St_Estephe: value,
+                        St_Emillion: value,
+                        Pomerol: value,
+                        Graves: value,
+                        #famous_wines: "Château Haut-Brion Pessac"
+                        Pessac_Leognan: value,
+                        Sauternes: value
+                     },
+             white_wine: value },
 
 Burgundy: {key: value},
 
@@ -27,14 +44,11 @@ Loire_Valley:
                               {white_grapes: "100% Sauvignon Blanc", ready_to_drink_years: [2, 3]},
                 Vouvray: 
                               {white_grapes: "100% Chenin Blanc", ready_to_drink_years: [1, 2, 3]}
-                }
-  },
+                },
+  sparkling_wine: "Cremant de Loire AC"},
 
-Alsace:   {white_wine: 
-          ["Riesling", "Pinot Blanc", "Gewurztraminer", "Pinot Gris", "Muscat", "Sylvaner"], 
-          rose_wine: 
-          ["Pinot Noir"]
-          },
+Alsace:   {white_wine: ["Riesling", "Pinot Blanc", "Gewurztraminer", "Pinot Gris", "Muscat", "Sylvaner"], 
+          rose_wine: "Pinot Noir"},
 
 Provence: {key: value},
 
