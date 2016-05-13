@@ -39,11 +39,11 @@ Bordeaux: { table_wine:
             dessert_wine: {Sauternes: ["Semillion", "Sauvignon Blanc", "Muscadelle"]}
           },
 
-Burgundy: {key: value},
+Burgundy: "It is a major region in France and a lot of wine is being produced there",
 
-Champagne: {key: value},
+Champagne: "Is famous for sparkling wine",
 
-Rhone: {key: value},
+Rhone: "Produces one of the best reds",
 
 Loire_Valley:
   {white_wine:  {Pouille_Fume: 
@@ -60,12 +60,19 @@ Loire_Valley:
 Alsace:   {white_wine: ["Riesling", "Pinot Blanc", "Gewurztraminer", "Pinot Gris", "Muscat", "Sylvaner"], 
           rose_wine: "Pinot Noir"},
 
-Provence: {rose_wine: {red_grapes: 
+Provence: {rose_wine: "This appellation is famous for it's rose wine.",
+          grapes:
+                      {red_grapes: 
                       ["Grenache Noir", "Syrah", "Mourvedre", "Carignan", "Cinsault", "Counoise", "Tannat", "Cabernet Sauvignon"], 
                       white_grapes: 
                       ["Rolle or Vermentino", "Ugni Blanc or Trebbiano", "Bourboulenc", "Clairette", "Marsanne", "Roussanne", "Grenache Blanc"]}
           },
 
-Languedoc_Roussillon: {key: value}
-
+Languedoc_Roussillon: {rose_wine: "This appellation produce some rose wine.",
+                       grapes:
+                            {red_grapes: 
+                            ["Grenache", "Carignan", "Cinsault", "Merlot", "Mourvedre", "Cabernet Sauvignon", "Syrah"], 
+                            white_grapes: 
+                            ["Sauvignon Blanc", "Chardonnay", "Grenache Blanc", "Picpoul Blanc", "Marsanne", "Roussanne", "Viognier", "Mauzac", "Chenin Blanc", "Clairette Blanche"]}
+}
 }
