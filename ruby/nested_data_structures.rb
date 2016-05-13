@@ -39,7 +39,16 @@ Bordeaux: { table_wine:
             dessert_wine: {Sauternes: ["Semillion", "Sauvignon Blanc", "Muscadelle"]}
           },
 
-Burgundy: "It is a major region in France and a lot of wine is being produced there",
+Burgundy: { Chablis: "100% Chardonnay",
+            Cote_d_Or: {red_grapes: "Pinot Noir", white_grapes: "Chardonnay"},
+            Cote_Chalonnaise: {table_wine:
+                                      {red_grapes: "Pinot Noir", 
+                                      white_grapes: ["Aligote", "Chardonnay"]},
+                              sparkling_wine: "Vins Mousseux that fall under Cremant de Bourgogne AC are quite nice sparkling wines."
+                              },
+            Macconnais: {red_grapes: ["Gamay", "Pinot Noir"], white_grapes: "Chardonnay"},
+            Beaujolais: "Gamay"
+          },
 
 Champagne: "Is famous for sparkling wine",
 
