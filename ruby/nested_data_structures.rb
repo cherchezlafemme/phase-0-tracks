@@ -60,7 +60,11 @@ Loire_Valley:
 Alsace:   {white_wine: ["Riesling", "Pinot Blanc", "Gewurztraminer", "Pinot Gris", "Muscat", "Sylvaner"], 
           rose_wine: "Pinot Noir"},
 
-Provence: {key: value},
+Provence: {rose_wine: {red_grapes: 
+                      ["Grenache Noir", "Syrah", "Mourvedre", "Carignan", "Cinsault", "Counoise", "Tannat", "Cabernet Sauvignon"], 
+                      white_grapes: 
+                      ["Rolle or Vermentino", "Ugni Blanc or Trebbiano", "Bourboulenc", "Clairette", "Marsanne", "Roussanne", "Grenache Blanc"]}
+          },
 
 Languedoc_Roussillon: {key: value}
 
