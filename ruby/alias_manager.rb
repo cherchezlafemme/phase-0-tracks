@@ -12,15 +12,22 @@ def spy_name_maker (real_name)
       #Make all downcase
       real_name = real_name.downcase
 
+      #Replace all the vowels to the next vowel in 'aeiou'. Using gsup on a string
+      real_name.gsub!(/[aeiou]/, "a" => "e", "e" => "i", "i" => "o", "o"=> "u", "u" => "a") 
+      #Vowels are replaced. We have a sting with replaced vowels.
+
+      #Address edge cases d=>f, h=>j, n=>p, t=>v, z=>b
+      real_name.gsub!(/[dhntz]/, "d" => "f", "h" => "j", "n" => "p", "t"=> "v", "z" => "b") 
+
       #Break down the name into separate letters, array
       letters = real_name.split("")
 
-              #Replace all the vowels to the next vowel in 'aeiou'
-
-              #Address edge cases d=>f, h=>j, n=>p, t=>v, z=>b
-
               #Replace all the consonants to the next one in alphabet 'abcdefghijklmnopqrstuvwxyz' by using map! { |letter| letter.next } 
-              # except edge cases: d=>f, h=>j, n=>p, t=>v, z=>b
+              # except edge cases: d=>f, h=>j, n=>p, t=>v, z=>b and vowels
+
+              
+
+
 
       #Assemble the new name and make it a string
       new_name = letters.join("")
