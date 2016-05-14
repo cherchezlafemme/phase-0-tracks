@@ -50,9 +50,9 @@ Burgundy: { Chablis: "100% Chardonnay",
             Beaujolais: "Gamay"
           },
 
-Champagne: "Is famous for sparkling wine",
+Champagne: {sparkling_wine: {red_grapes: ["Pinot Meunier", "Pinot Noir"], white_grapes: "Chardonnay"}},
 
-Rhone: "Produces one of the best reds",
+Rhone: {red_grapes: ["Syrah", "Grenache", "Mourvedre"], white_grapes: ["Marsanne", "Roussanne", "Viognier", "Grenache Blanc"]},
 
 Loire_Valley:
   {white_wine:  {Pouille_Fume: 
