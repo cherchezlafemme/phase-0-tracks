@@ -17,9 +17,10 @@ def spy_name_maker (real_name)
 
               #Replace all the vowels to the next vowel in 'aeiou'
 
-              #Replace all the consonants to the net one in 'bcdfghjklmnpqrstvwxz'
+              #Address edge cases d=>f, h=>j, n=>p, t=>v, z=>b
 
-              #Address edge cases
+              #Replace all the consonants to the next one in alphabet 'abcdefghijklmnopqrstuvwxyz' by using map! { |letter| letter.next } 
+              # except edge cases: d=>f, h=>j, n=>p, t=>v, z=>b
 
       #Assemble the new name and make it a string
       new_name = letters.join("")
