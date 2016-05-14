@@ -1,9 +1,8 @@
-#Wine of France. First list major wine regions = appellation. Then sub-regions if applicable or name of the wine that you see on the bottle. 
-#Consider mentioning if wine is white, red, sparkling, dessert, fortified. 
-#Then name the grapes.
-
-value = "not filled"
-key = "put the key"
+#Nested data structure that represents a real world Wine of France. Starting with geography, to the wine grapes grown there and wine produced.
+#First I listed major wine regions. Then sub-regions if applicable or name of the wine that you see on the bottle. 
+#I considered mentioning what kind of wine (white, red, sparkling, dessert, fortified) is produced in this region. 
+#Named what grapes grow in this appellation and wine-maker uses to make his wine. 
+#I also added some fun information about specific appellations like famous wines they make or how long that bottle will need to age.
 
 wine_of_France = {
 
@@ -85,3 +84,22 @@ Languedoc_Roussillon: {rose_wine: "This appellation produce some rose wine.",
                             ["Sauvignon Blanc", "Chardonnay", "Grenache Blanc", "Picpoul Blanc", "Marsanne", "Roussanne", "Viognier", "Mauzac", "Chenin Blanc", "Clairette Blanche"]}
 }
 }
+
+puts wine_of_France[:Bordeaux][:table_wine][:Medoc_region][:sub_regions][:Pauillac_AC][:famous_wines]
+# Will give you the list of famous wines of Bordeaux Medoc appellation 
+# => Château Latour Château Lafite-Rothschild Château Mouton-Rothschild
+
+puts wine_of_France[:Alsace][:rose_wine]
+# => Pinot Noir
+
+puts wine_of_France[:Burgundy][:Chablis]
+# => 100% Chardonnay
+
+puts wine_of_France[:Loire_Valley][:white_wine][:Pouille_Fume][:ready_to_drink_years][0]
+# => 3
+# 3 years is a minimum number of years after bottling when this wine will be ready to drink
+
+puts wine_of_France[:Bordeaux][:table_wine][:Pomerol][:ready_to_drink_years]
+# => Rich and lush wines with amazing aging potential that can be compared to the Medoc region.
+# Can age up to 40 years. Main grape is Merlot, Cabernet Sauvignon and Cabernet Franc are used only for blending.
+
