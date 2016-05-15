@@ -52,7 +52,7 @@ aliases = {}
       puts "If you want to quit the program, please, type in quit."
       quiting = gets.chomp end until quiting == "quit"
 
-# Call the hash with all the collected data aliases = {real_name: updated_name}
+# Call the hash with all the collected data aliases = {original_name: spy_name}
 aliases
 
 #Print the data from the hash
