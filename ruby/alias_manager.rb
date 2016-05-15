@@ -1,4 +1,3 @@
-#
 def spy_name_maker (real_name)
 #Input of the method: real name of the agent. 
 #Output: new updated spy name, where vowels replaced with next vowel and consonants replaced with next in alphabet consonants. 
@@ -32,19 +31,29 @@ def spy_name_maker (real_name)
       updated_name[0] = updated_name[0].upcase!
       updated_name[whitespace_index+1] = updated_name[whitespace_index+1].upcase!
 
-      #Print new name of the agent
-      puts updated_name
+      #Return name of the agent
+      return updated_name
 
 end   
 
+#Initialize a hash for collecting data
+aliases = {}
+
 #User interaction:
+      #Ask the agent's real name
+      begin puts 'What is your name?'
+      real_name = gets.chomp
 
-#Ask the agent's real name
-begin puts 'What is your name?'
-real_name = gets.chomp
+      #Call out the method to run it in the program and print a new spy name
+      spy_name_maker (real_name)
+      puts "Your new name is #{spy_name_maker (real_name)}"
+      aliases[real_name] = spy_name_maker (real_name)
 
-#Call out the method to run it in the program
-spy_name_maker (real_name)
+      puts "If you want to quit the program, please, type in quit."
+      quiting = gets.chomp end until quiting == "quit"
 
-puts "If you want to quit the program, please, type in quit."
-quiting = gets.chomp end until quiting == "quit"
+# Call the hash with all the collected data aliases = {real_name: updated_name}
+aliases
+
+
+
