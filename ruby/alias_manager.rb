@@ -21,8 +21,10 @@ def spy_name_maker (real_name)
       #make edge cases different
       updated_name.gsub!(/[dhntz]/, "d" => "F", "h" => "J", "n" => "P", "t"=> "V", "z" => "B") 
 
-      #Replace all the consonants to the next one in alphabet 'abcdefghijklmnopqrstuvwxyz' except edge cases: d=>f, h=>j, n=>p, t=>v, z=>b and vowels
-      updated_name.gsub!(/[bcfgjklmpqrsvwxy]/){|x| x.next}
+      #NEW PIECE OF CODE. REPLACED WITH MAP METHOD
+      updated_name = updated_name.split('')
+      updated_name.select{ |letter| letter =~ /[bcfgjklmpqrsvwxy]/ }.map!{|letter| letter.next!}
+      updated_name = updated_name.join('')
 
       #Make all downcase
       updated_name = updated_name.downcase
