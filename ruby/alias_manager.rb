@@ -55,5 +55,8 @@ aliases = {}
 # Call the hash with all the collected data aliases = {real_name: updated_name}
 aliases
 
+#Print the data from the hash
+aliases.each {|original_name, spy_name| puts "#{spy_name} is actually #{original_name}" }
+
 
 
