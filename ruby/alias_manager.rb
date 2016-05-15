@@ -1,7 +1,4 @@
-#Ask the agent's real name
-puts 'What is your name?'
-real_name = gets.chomp
-
+#
 def spy_name_maker (real_name)
 #Input of the method: real name of the agent. 
 #Output: new updated spy name, where vowels replaced with next vowel and consonants replaced with next in alphabet consonants. 
@@ -13,6 +10,7 @@ def spy_name_maker (real_name)
 
       #Find the index for a whitespace
       whitespace_index=updated_name.index(" ")
+      
       #Make all downcase
       updated_name = updated_name.downcase
 
@@ -21,31 +19,32 @@ def spy_name_maker (real_name)
       #Vowels are replaced. We have a sting with replaced vowels.
 
       #Address edge cases d=>f, h=>j, n=>p, t=>v, z=>b
-      #make the upcase 
+      #make edge cases different
       updated_name.gsub!(/[dhntz]/, "d" => "F", "h" => "J", "n" => "P", "t"=> "V", "z" => "B") 
 
-      #Break down the name into separate letters, array
-      letters = updated_name.split("")
+      #Replace all the consonants to the next one in alphabet 'abcdefghijklmnopqrstuvwxyz' except edge cases: d=>f, h=>j, n=>p, t=>v, z=>b and vowels
+      updated_name.gsub!(/[bcfgjklmpqrsvwxy]/){|x| x.next}
 
-              #Replace all the consonants to the next one in alphabet 'abcdefghijklmnopqrstuvwxyz' by using map! { |letter| letter.next } 
-              # except edge cases: d=>f, h=>j, n=>p, t=>v, z=>b and vowels
-              letters.reject{ |letter| letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u"
-              letter == "B" || letter == "V" || letter == "P" || letter == "J" || letter == "F"}.map!{ |letter| letter.next}
-
-      #Assemble the new name and make it a string
-      new_name = letters.join("")
-      new_name = new_name.to_str
-
-      #Add the whitespace to the same index as before
-      new_name = new_name.insert(whitespace_index, " ")
+      #Make all downcase
+      updated_name = updated_name.downcase
 
       #Make first letter upcase and the letter with whitespace index + 1
-      new_name[0] = new_name[0].upcase!
-      new_name[whitespace_index+1] = new_name[whitespace_index+1].upcase!
+      updated_name[0] = updated_name[0].upcase!
+      updated_name[whitespace_index+1] = updated_name[whitespace_index+1].upcase!
 
       #Print new name of the agent
-      puts new_name
+      puts updated_name
 
-end
+end   
+
+#User interaction:
+
+#Ask the agent's real name
+begin puts 'What is your name?'
+real_name = gets.chomp
 
 #Call out the method to run it in the program
+spy_name_maker (real_name)
+
+puts "If you want to quit the program, please, type in quit."
+quiting = gets.chomp end until quiting == "quit"
