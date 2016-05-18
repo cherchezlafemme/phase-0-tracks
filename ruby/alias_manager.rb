@@ -4,14 +4,33 @@ INPUT: string, user real name
 OUTPUT: spy name (modified real name), string
 USER INTERACTION: 1.ask the name, 2.assign value to real_name variable, 3.tell user's new spy_name 4. create a loop so that user can do this repeatedly until they type 'quit' and program exits. 5. Print a sentence by iterating through data structure that stores info about real_name and spy_name of the user.
 BUSINESS LOGIC:
-1. swap users first and last name
+1. create a method to swap users first and last name
 2. create method or code block for replacing vowels (a, e, i, o, or u) to the next vowel in 'aeiou'
 3. create method or code block for consonants to become the next one in alphabet
 4. address the edge cases
 5. create a data structure and feed the info to it
+6. make main method that will use small ones and give out the expected output
 =end
 
+#Input real_name string, output name string
+def split_name (real_name)    
+      splited_name = real_name.split
+      name = splited_name.last + (" ") + splited_name.first
+      name.to_str
+end
 
+def spy_creator (real_name)
+      name = split_name (real_name)
+      name = name.downcase
+      letters = name.split('')
+      #letters = ["t", "o", "r", "r", "e", "s", " ", "f", "e", "l", "i", "c", "i", "a"]
+      letters.map! do
+            'hi'
+      end
+      spy_name = letters.join
+      p spy_name
+end
+spy_creator (real_name)
 
 
 def spy_name_maker (real_name)
