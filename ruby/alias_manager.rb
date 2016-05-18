@@ -1,3 +1,19 @@
+#PSEUDOCODE:
+=begin 
+INPUT: string, user real name
+OUTPUT: spy name (modified real name), string
+USER INTERACTION: 1.ask the name, 2.assign value to real_name variable, 3.tell user's new spy_name 4. create a loop so that user can do this repeatedly until they type 'quit' and program exits. 5. Print a sentence by iterating through data structure that stores info about real_name and spy_name of the user.
+BUSINESS LOGIC:
+1. swap users first and last name
+2. create method or code block for replacing vowels (a, e, i, o, or u) to the next vowel in 'aeiou'
+3. create method or code block for consonants to become the next one in alphabet
+4. address the edge cases
+5. create a data structure and feed the info to it
+=end
+
+
+
+
 def spy_name_maker (real_name)
 #Input of the method: real name of the agent. 
 #Output: new updated spy name, where vowels replaced with next vowel and consonants replaced with next in alphabet consonants. 
