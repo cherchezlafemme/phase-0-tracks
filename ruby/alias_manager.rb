@@ -19,59 +19,31 @@ def split_name (real_name)
       name.to_str
 end
 
+def modify_vowels (letter)
+      vowels = 'aeiou'
+      new_vowels = 'eioua'
+      place = vowels.index(letter) 
+      letter = new_vowels[place]
+      letter
+end
+ 
 def spy_creator (real_name)
       name = split_name (real_name)
       name = name.downcase
-      letters = name.split('')
-      #letters = ["t", "o", "r", "r", "e", "s", " ", "f", "e", "l", "i", "c", "i", "a"]
-      letters.map! do
-            'hi'
-      end
-      spy_name = letters.join
-      p spy_name
+p     name = name.split('') #=>"torres felicia"
+      name.map! do |letter|
+
+                        if letter.match(/[aeiou]/)
+                        modify_vowels (letter)
+                        
+                        end
+                  end
+      p name
 end
 spy_creator (real_name)
 
 
-def spy_name_maker (real_name)
-#Input of the method: real name of the agent. 
-#Output: new updated spy name, where vowels replaced with next vowel and consonants replaced with next in alphabet consonants. 
 
-      #Swap first and last name
-      name = real_name.split
-      updated_name = name.last + (" ") + name.first
-      updated_name.to_str
-
-      #Find the index for a whitespace
-      whitespace_index=updated_name.index(" ")
-      
-      #Make all downcase
-      updated_name = updated_name.downcase
-
-      #Replace all the vowels to the next vowel in 'aeiou'. Using gsup on a string
-      updated_name.gsub!(/[aeiou]/, "a" => "e", "e" => "i", "i" => "o", "o"=> "u", "u" => "a") 
-      #Vowels are replaced. We have a sting with replaced vowels.
-
-      #Address edge cases d=>f, h=>j, n=>p, t=>v, z=>b
-      #make edge cases different
-      updated_name.gsub!(/[dhntz]/, "d" => "F", "h" => "J", "n" => "P", "t"=> "V", "z" => "B") 
-
-      #NEW PIECE OF CODE. REPLACED WITH MAP METHOD
-      updated_name = updated_name.split('')
-      updated_name.select{ |letter| letter =~ /[bcfgjklmpqrsvwxy]/ }.map!{|letter| letter.next!}
-      updated_name = updated_name.join('')
-
-      #Make all downcase
-      updated_name = updated_name.downcase
-
-      #Make first letter upcase and the letter with whitespace index + 1
-      updated_name[0] = updated_name[0].upcase!
-      updated_name[whitespace_index+1] = updated_name[whitespace_index+1].upcase!
-
-      #Return name of the agent
-      return updated_name
-
-end   
 
 #Initialize a hash for collecting data
 aliases = {}
