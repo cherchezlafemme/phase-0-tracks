@@ -1,63 +1,75 @@
-def spy_name_maker (real_name)
-#Input of the method: real name of the agent. 
-#Output: new updated spy name, where vowels replaced with next vowel and consonants replaced with next in alphabet consonants. 
+#PSEUDOCODE:
+=begin 
+INPUT: string, user real name
+OUTPUT: spy name (modified real name), string
+USER INTERACTION: 1.ask the name, 2.assign value to real_name variable, 3.tell user's new spy_name 4. create a loop so that user can do this repeatedly until they type 'quit' and program exits. 5. Print a sentence by iterating through data structure that stores info about real_name and spy_name of the user.
+BUSINESS LOGIC:
+1. create a method to swap users first and last name
+2. create method or code block for replacing vowels (a, e, i, o, or u) to the next vowel in 'aeiou'
+3. make main method that will use small ones and give out the expected output. 
+Go through each letter in an array by using map! and changing them once it is meeting the condition of if statement
+      IF it is a z or !, do b or nothing,
+      ELSIF it is vowel apply modify_vowels method,
+      ELSIF it is an edge case go to up .next.next
+      ELSE move one up .next
+      END
+5. make first letter upcase and first letter after whitespace also upcase
+6. create a data structure and feed the info to it
+=end
 
-      #Swap first and last name
-      name = real_name.split
-      updated_name = name.last + (" ") + name.first
-      updated_name.to_str
+#BUSINESS LOGIC: Input real_name string, output name string
 
-      #Find the index for a whitespace
-      whitespace_index=updated_name.index(" ")
-      
-      #Make all downcase
-      updated_name = updated_name.downcase
+def split_name (real_name)    
+      splited_name = real_name.split
+      name = splited_name.last + (" ") + splited_name.first
+      name.to_str
+end
 
-      #Replace all the vowels to the next vowel in 'aeiou'. Using gsup on a string
-      updated_name.gsub!(/[aeiou]/, "a" => "e", "e" => "i", "i" => "o", "o"=> "u", "u" => "a") 
-      #Vowels are replaced. We have a sting with replaced vowels.
+def modify_vowels (letter)
+      vowels = 'aeiou'
+      new_vowels = 'eioua'
+      place = vowels.index(letter) 
+      letter = new_vowels[place]
+      letter
+end
+ 
+def spy_creator (real_name)
+      name = split_name (real_name)
+      whitespace_index = name.index(" ")
+      name = name.downcase
+      name = name.split('')
+      name.map! do |letter|
+                        if letter == "z"
+                        letter = "b"
+                        elsif letter == " "
+                        letter
+                        elsif letter.match(/[aeiou]/)
+                        modify_vowels (letter)
+                        elsif letter.match(/[dhnt]/)
+                        letter.next.next!
+                        else letter.next
+                        end
+                  end
+      name
+      name[0] = name[0].upcase!
+      name[whitespace_index+1] = name[whitespace_index+1].upcase!
+      spy_name = name.join
+      return spy_name
+end
 
-      #Address edge cases d=>f, h=>j, n=>p, t=>v, z=>b
-      #make edge cases different
-      updated_name.gsub!(/[dhntz]/, "d" => "F", "h" => "J", "n" => "P", "t"=> "V", "z" => "B") 
-
-      #NEW PIECE OF CODE. REPLACED WITH MAP METHOD
-      updated_name = updated_name.split('')
-      updated_name.select{ |letter| letter =~ /[bcfgjklmpqrsvwxy]/ }.map!{|letter| letter.next!}
-      updated_name = updated_name.join('')
-
-      #Make all downcase
-      updated_name = updated_name.downcase
-
-      #Make first letter upcase and the letter with whitespace index + 1
-      updated_name[0] = updated_name[0].upcase!
-      updated_name[whitespace_index+1] = updated_name[whitespace_index+1].upcase!
-
-      #Return name of the agent
-      return updated_name
-
-end   
-
-#Initialize a hash for collecting data
 aliases = {}
 
-#User interaction:
-      #Ask the agent's real name
-      begin puts 'What is your name?'
+#USER INTERACTION:
+begin puts 'What is your name?'
       real_name = gets.chomp
-
-      #Call out the method to run it in the program and print a new spy name
-      spy_name_maker (real_name)
-      puts "Your new name is #{spy_name_maker (real_name)}"
-      aliases[real_name] = spy_name_maker (real_name)
-
+      spy_creator (real_name)
+      
+      puts "Your new name is #{spy_creator (real_name)}"
+      aliases[real_name] = spy_creator (real_name)
+      
       puts "If you want to quit the program, please, type in quit."
       quiting = gets.chomp end until quiting == "quit"
-
-# Call the hash with all the collected data aliases = {original_name: spy_name}
 aliases
-
-#Print the data from the hash
 aliases.each {|original_name, spy_name| puts "#{spy_name} is actually #{original_name}" }
 
 
