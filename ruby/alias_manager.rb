@@ -17,7 +17,8 @@ Go through each letter in an array by using map! and changing them once it is me
 6. create a data structure and feed the info to it
 =end
 
-#Input real_name string, output name string
+#BUSINESS LOGIC: Input real_name string, output name string
+
 def split_name (real_name)    
       splited_name = real_name.split
       name = splited_name.last + (" ") + splited_name.first
@@ -55,31 +56,20 @@ def spy_creator (real_name)
       spy_name = name.join
       return spy_name
 end
-spy_creator (real_name)
 
-
-
-
-#Initialize a hash for collecting data
 aliases = {}
 
-#User interaction:
-      #Ask the agent's real name
-      begin puts 'What is your name?'
+#USER INTERACTION:
+begin puts 'What is your name?'
       real_name = gets.chomp
-
-      #Call out the method to run it in the program and print a new spy name
-      spy_name_maker (real_name)
-      puts "Your new name is #{spy_name_maker (real_name)}"
-      aliases[real_name] = spy_name_maker (real_name)
-
+      spy_creator (real_name)
+      
+      puts "Your new name is #{spy_creator (real_name)}"
+      aliases[real_name] = spy_creator (real_name)
+      
       puts "If you want to quit the program, please, type in quit."
       quiting = gets.chomp end until quiting == "quit"
-
-# Call the hash with all the collected data aliases = {original_name: spy_name}
 aliases
-
-#Print the data from the hash
 aliases.each {|original_name, spy_name| puts "#{spy_name} is actually #{original_name}" }
 
 
