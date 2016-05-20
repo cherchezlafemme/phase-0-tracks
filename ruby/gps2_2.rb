@@ -49,8 +49,6 @@
 
 #BUSINESS LOGIC
 
-list_given_by_user = "carrots apples cereal pizza"
-
 def create_list(list_given_by_user)
   shopping_list = {}
   quantity = 1
@@ -58,41 +56,35 @@ def create_list(list_given_by_user)
   list_of_items.each do |item|
     shopping_list[item] = "qty:#{quantity}"
   end
-  p shopping_list
+  shopping_list
 end
-
-p shopping_list = create_list(list_given_by_user)
 
 def add_item(shopping_list)
   loop do
-    puts "What item would you like to add to the list?"
+    puts "What item would you like to add to the list? If you don't want to add any, just type in done."
     add_item = gets.chomp
     break if add_item == "done"
     puts "How many?"
     user_quantity = gets.chomp
     shopping_list[add_item] = "qty: #{user_quantity}"
   end
-  p shopping_list
+  shopping_list
 end
-
-p add_item(shopping_list)
 
 def remove_item(shopping_list)
   loop do 
  puts "Here are the items in your list: #{shopping_list.keys}"
- puts "Which items would you like to remove?"
+ puts "Which items would you like to remove? If you don't want to remove any, just type in done."
  item_remove = gets.chomp
  break if item_remove == "done"
  shopping_list.delete(item_remove)
  end
- p shopping_list
+ shopping_list
 end
-
-p remove_item(shopping_list)
 
 def update_item_quantity(shopping_list)
  loop do
- puts "Which item would you like to update the quantity of?"
+ puts "Which item would you like to update the quantity of? If you don't want to update any, just type in done."
  item_update = gets.chomp
  break if item_update == "done"
  puts "How many of this item would you like?"
@@ -103,7 +95,34 @@ def update_item_quantity(shopping_list)
    puts "Sorry! Looks like this item is not on your list!"
    end
  end
- p shopping_list
+ shopping_list
 end
 
-p update_item_quantity(shopping_list)
+def print_list (shopping_list)
+  puts "Shoppping list:".upcase
+  shopping_list.each {|item, quantity| puts "#{item.capitalize}, #{quantity}"}
+end
+
+#User Interface:
+puts "Please, enter your shopping list!"
+list_given_by_user = gets.chomp
+shopping_list = create_list(list_given_by_user)
+puts "Would you like to add a new item to your list? y/n"
+answer = gets.chomp
+  if answer == "y"
+  add_item(shopping_list)
+  else puts "Great! No items will be added."
+  end
+puts "Would you like to remove an item from your list? y/n"
+answer = gets.chomp
+  if answer == "y"
+  remove_item(shopping_list)
+  else puts "Great! No items will be removed."
+  end
+puts "Would you like to update the quantity of any of your items? y/n"
+answer = gets.chomp
+  if answer == "y"
+  update_item_quantity(shopping_list) 
+  else puts "Great! No quantities will be updated"
+  end
+print_list (shopping_list)
