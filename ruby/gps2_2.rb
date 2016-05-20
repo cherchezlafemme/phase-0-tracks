@@ -9,7 +9,7 @@
       # Use the item names as a key
       # Updated the values with default value
       # Check the type of data structure to make sure we have a hash
-  # print the list to the console [Use print the list method]
+  # print the list to the console
 # output: hash
 
 # Method to add an item to a list
@@ -99,7 +99,7 @@ def update_item_quantity(shopping_list)
 end
 
 def print_list (shopping_list)
-  puts "Shoppping list:".upcase
+  puts "Shopping list:".upcase
   shopping_list.each {|item, quantity| puts "#{item.capitalize}, #{quantity}"}
 end
 
@@ -107,6 +107,7 @@ end
 puts "Please, enter your shopping list!"
 list_given_by_user = gets.chomp
 shopping_list = create_list(list_given_by_user)
+print_list (shopping_list)
 puts "Would you like to add a new item to your list? y/n"
 answer = gets.chomp
   if answer == "y"
@@ -126,3 +127,25 @@ answer = gets.chomp
   else puts "Great! No quantities will be updated"
   end
 print_list (shopping_list)
+
+# Release 5: Reflect
+# What did you learn about pseudocode from working on this challenge?
+#I learned how to use normal English language words and not to put built in methods names in it. 
+#I now know that even a person who doesn't know the programming language should be able to understand what I am trying to do from reading my pseudocode.
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+# In the beginning we had a string that we converted into the array, and then into the hash since hash suited our program more.
+# We used mostly hashes. And manipulated with a hash to create an array of the hash keys.
+
+# What does a method return?
+# The value of the last line, statement in the method.
+
+# What kind of things can you pass into methods as arguments?
+# You pass the argument so it is matching the parameter of the method. It can be anything from a specific data type represented by a variable to the exact string, number.
+
+# How can you pass information between methods?
+# By using the return value of the previous method and giving it to a variable. Then use this variable as an argument for the next method.
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+# Pseudocoding is now more clear and the structure of the code (the way it should look like). 
+# I am not sure if I got the past about methods passing the information between them completely right though.
