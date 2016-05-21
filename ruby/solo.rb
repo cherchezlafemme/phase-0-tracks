@@ -18,7 +18,7 @@ Methods:
 
 class Bottle_of_wine
 attr_reader :purpose
-attr_accessor :vintage, :grapes, :type, :color, :origin, :producer
+attr_accessor :vintage, :grape, :type, :color, :origin, :producer
 
 def initialize(grape, type, color)
   puts "Congratulations! A bottle of delicious wine has been just created for you..."
@@ -64,6 +64,7 @@ first_bottle.compliment("honey roasted trout with green beans")
 puts "Hello there! How many bottles of wine would you like?"
 number = gets.chomp.to_i
 bottle_count = 0
+collection_of_wine = []
 
 loop do
 puts "What are the grapes your wine is made of?"
@@ -82,19 +83,42 @@ type = gets.chomp
   else color = "Not sure... will tell you once it is in the glass!"
   end
 
-bottle = Bottle_of_wine.new(grape, type, color)  
+collection_of_wine << bottle = Bottle_of_wine.new(grape, type, color)  
 
 bottle_count +=1
   if bottle_count == 1
-    puts "I hope you are happy! You have #{bottle_count} bottle of wine"
+    puts "I hope you are happy! You have #{bottle_count} bottle of wine."
       if bottle_count == number
-      else puts "Let's keep going... we are off to the next bottle!"
+      else puts "Just hit space to keep going and we will be off to the next bottle! Or type 'done' to exit the program."
+        be_done = gets.chomp
       end
     else 
-    puts "I hope you are happy! You have #{bottle_count} bottles of wine"
+    puts "I hope you are happy! You have #{bottle_count} bottles of wine."
       if bottle_count == number
-      else puts "Let's keep going... we are off to the next bottle!"
+      else puts "Just hit space to keep going and we will be off to the next bottle! Or type 'done' to exit the program."
+         be_done = gets.chomp
       end
   end
-break if bottle_count == number
+  
+break if bottle_count == number || be_done == "done"
 end 
+
+puts "Do you want to see you wine collection? Type yes if you do!"
+see_collection = gets.chomp
+  if see_collection == "yes"
+    collection_of_wine.each do |bottle|
+      puts "This is bottle № #{collection_of_wine.index(bottle) + 1}"
+      puts "Vintage: #{bottle.vintage}"
+      puts "Grape: #{bottle.grape}"
+      puts "Type: #{bottle.type}"
+      puts "Color: #{bottle.color}"
+      puts "Origin: #{bottle.origin}"
+      puts "Producer: #{bottle.producer}"
+      puts "Purpose: #{bottle.purpose}"
+      puts "-------------------------------------"
+    end
+  else puts "Thank you for using our app! See you latter."
+  end
+
+
+
