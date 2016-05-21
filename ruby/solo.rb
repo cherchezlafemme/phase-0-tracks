@@ -112,7 +112,7 @@ bottle_count +=1
   if bottle_count == 1
     puts "I hope you are happy! You have #{bottle_count} bottle of wine."
       if bottle_count == number
-      else puts "Just hit enter to keep going and we will be off to the next bottle! Or type 'done' to exit the program."
+      else puts "Just hit  to keep going and we will be off to the next bottle! Or type 'done' to exit the program."
         be_done = gets.chomp
       end
     else 
