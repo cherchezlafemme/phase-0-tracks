@@ -14,11 +14,48 @@ class Santa
   def eat_milk_and_cookies(cookie_type)
     puts "That was a good #{cookie_type}!" 
   end
+
+  def celebrate_birthday
+    @age = @age + 1
+  end
+
+  def get_mad_at (raindeer_name)
+    @reindeer_ranking.delete(raindeer_name)
+    @reindeer_ranking.push(raindeer_name)
+  end
+
+  #Getter methods
+    def age
+      @age
+    end
+
+    def ethnicity
+      @ethnicity
+    end
+    
+    def gender
+      @gender
+    end
+
+   # Setter methods
+    def gender=(new_gender)
+      @gender = new_gender
+    end 
 end
 
-# santa = Santa.new
-# santa.speak
-# santa.eat_milk_and_cookies("chocolate chip cookie")
+=begin DRIVER CODE
+santa = Santa.new("female", "Siberian")
+santa.speak
+santa.eat_milk_and_cookies("chocolate chip cookie")
+p santa.age
+p santa.celebrate_birthday
+p santa.celebrate_birthday
+p santa.celebrate_birthday
+p santa.ethnicity
+santa.get_mad_at("Cupid")
+santa.gender = "Only god knows"
+p santa.gender
+=end
 
 santas = []
 genders = ["male", "female", "N/A"]
