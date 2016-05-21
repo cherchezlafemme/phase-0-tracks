@@ -85,17 +85,40 @@ type = gets.chomp
 
 collection_of_wine << bottle = Bottle_of_wine.new(grape, type, color)  
 
+puts "Do you want to specify the year wine was made, producer or the country/region where it's coming from? If so, type 'yes'."
+change_default_attributes = gets.chomp
+if change_default_attributes == "yes"
+  loop do puts "Pick one of the following: vintage, producer or origin. Or type in 'done' if you are good to go!"
+  attribute_to_change = gets.chomp
+    if attribute_to_change == "vintage"
+        puts "What is the year this wine was made?"
+        bottle.vintage = gets.chomp
+    elsif attribute_to_change == "producer"
+        puts "Who is the producer of this wine?"
+        bottle.producer = gets.chomp
+    elsif attribute_to_change == "origin"
+        puts "What country/region/village this wine is from?"
+        bottle.origin = gets.chomp
+    elsif attribute_to_change != "done"
+      puts "Wooops. I am not sure what part of information about this wine you want to update."
+    else
+    end
+  break if attribute_to_change == "done"
+  end 
+else
+end
+
 bottle_count +=1
   if bottle_count == 1
     puts "I hope you are happy! You have #{bottle_count} bottle of wine."
       if bottle_count == number
-      else puts "Just hit space to keep going and we will be off to the next bottle! Or type 'done' to exit the program."
+      else puts "Just hit enter to keep going and we will be off to the next bottle! Or type 'done' to exit the program."
         be_done = gets.chomp
       end
     else 
     puts "I hope you are happy! You have #{bottle_count} bottles of wine."
       if bottle_count == number
-      else puts "Just hit space to keep going and we will be off to the next bottle! Or type 'done' to exit the program."
+      else puts "Just hit enter to keep going and we will be off to the next bottle! Or type 'done' to exit the program."
          be_done = gets.chomp
       end
   end
@@ -119,6 +142,3 @@ see_collection = gets.chomp
     end
   else puts "Thank you for using our app! See you latter."
   end
-
-
-
