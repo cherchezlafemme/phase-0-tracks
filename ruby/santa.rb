@@ -16,14 +16,41 @@ class Santa
   end
 end
 
-santa = Santa.new
-santa.speak
-santa.eat_milk_and_cookies("chocolate chip cookie")
+# santa = Santa.new
+# santa.speak
+# santa.eat_milk_and_cookies("chocolate chip cookie")
+
 santas = []
-santas << Santa.new("agender", "black")
-santas << Santa.new("female", "Latino")
-santas << Santa.new("bigender", "white")
-santas << Santa.new("male", "Japanese")
-santas << Santa.new("female", "prefer not to say")
-santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-santas << Santa.new("N/A", "N/A")
+genders = ["male", "female", "N/A"]
+ethnicities = ["Siberian", "Goblin", "Old style original Santa", "Icelandic Giant", "Born in the mountains", "Weird mix", "Prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+#First variant of initializing santa instances
+ethnicities.length.times do |i|
+  santas << Santa.new(genders[rand(3)], ethnicities[i])
+end
+
+#Second variant of initializing santa instances
+i = 1
+while santas.length < 10
+  santas << Santa.new(g = genders[rand(3)], e = ethnicities[rand(9)])
+  puts "This is Santa #{i}"
+  puts "Gender: #{g}"
+  puts "Ethnicity: #{e}"
+  i += 1
+  santas.length
+end 
+
+#Third variant of initializing santa instances
+i = 1
+5.times do |num| 
+  santas << Santa.new(genders[num], ethnicities[num])
+  puts "This is Santa #{i}"
+i += 1
+end
+
+
+=begin cookies = ["chocolate chip cookie", "peanut butter cookie", "sugar cookie", "lemon cookie"] 
+i = 0  
+santas.each {|santa| santa.eat_milk_and_cookies(cookies[i])}
+i += 1
+=end
