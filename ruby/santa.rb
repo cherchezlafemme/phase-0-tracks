@@ -71,9 +71,17 @@ i = 1
 i += 1
 end
 
-
-=begin cookies = ["chocolate chip cookie", "peanut butter cookie", "sugar cookie", "lemon cookie"] 
-i = 0  
-santas.each {|santa| santa.eat_milk_and_cookies(cookies[i])}
-i += 1
-=end
+# MILLION SANTA MAKER
+number = 0
+loop do
+santas << Santa.new(genders[rand(genders.length)], ethnicities[rand(ethnicities.length)])
+santas[number].age = rand(0...140)
+puts "This is Santa № #{number+1}"
+puts "Age: #{santas[number].age}"
+puts "Ethnicity: #{santas[number].ethnicity}"
+puts "Gender: #{santas[number].age}"
+puts "Santas friends: #{santas[number].reindeer_ranking.join(", ")}"
+puts "-----------------------------------------"
+number +=1
+break if number == 1000000
+end
