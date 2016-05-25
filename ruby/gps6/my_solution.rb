@@ -71,9 +71,30 @@ class VirusPredictor
 end
 
 #=======================================================================
+#Pseudocode:
+#Create one instance for each of the states from the state data hash
+#Apply virus_effects method to each instance
+
+STATE_DATA.each do |state_name, state_data|
+state = VirusPredictor.new(state_name, state_data[:population_density], state_data[:population])
+  # p state_name
+  # p state_data
+  # puts
+  state.virus_effects
+end
+
+
+
+
+
+
+
 
 # DRIVER CODE
  # initialize VirusPredictor for each state
+
+
+
 
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
