@@ -23,6 +23,8 @@
 // Pseudocode:
 // Start the function that takes two objects.
 // Find out if the objects has the same key.
+  // Make two arrays, one for each object with the keys of this object.
+  // Go one by one through these arrays and compare if the key names are matching.
 // If they do share same key, check if the values of this key from both the objects are matching. If this is the case, return true.
 // In any other case return false.
 
@@ -44,7 +46,19 @@ return array[indexOfTheLongestString];
 
 //RELEASE 1:
 function findKeyValueMatch(firstObject, secondObject) {
-
+// for each key find a matching key in the othe object
+//console.log(firstObject.key[1]);
+  var keysOfFirstObject = Object.keys(firstObject);
+  console.log(keysOfFirstObject);
+  var keysOfSecondObject = Object.keys(secondObject);
+  console.log(keysOfSecondObject);
+    for (i = 0; i < keysOfFirstObject.length; i++ ) {
+     if (keysOfFirstObject[i] == keysOfSecondObject[i]) {
+     console.log('true')
+     } else {
+     console.log('false')
+     }
+    }
 }
 
 //RELEASE 2:
