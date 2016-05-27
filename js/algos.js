@@ -47,27 +47,19 @@ return array[indexOfTheLongestString];
 //RELEASE 1:
 function findKeyValueMatch(firstObject, secondObject) {
 var keysOfFirstObject = Object.keys(firstObject);
-console.log(keysOfFirstObject);
 var keysOfSecondObject = Object.keys(secondObject);
-console.log(keysOfSecondObject);
-
 var keyValueMatchFound = false;
-for (i = 0; i < keysOfFirstObject.length; i++ ) {
- if (keysOfFirstObject[i] == keysOfSecondObject[i]) {
-  if (firstObject[keysOfFirstObject[i]] == secondObject[keysOfFirstObject[i]]) {
-    console.log("we found a key-value match");
-    keyValueMatchFound = true;
-    
-  }else{
-    console.log("only the keys are matching, the valued DO NOT");
+  for (i = 0; i < keysOfFirstObject.length; i++ ) {
+    if (keysOfFirstObject[i] == keysOfSecondObject[i]) {
+      if (firstObject[keysOfFirstObject[i]] == secondObject[keysOfFirstObject[i]]) {
+        keyValueMatchFound = true;
+      }else{
+        keyValueMatchFound;
+      }
+    }else{
     keyValueMatchFound;
+    }
   }
-   }else{
-console.log("No match in keys is found");
-keyValueMatchFound;
- }
-}
-console.log(keyValueMatchFound);
 return keyValueMatchFound;
 }
 
