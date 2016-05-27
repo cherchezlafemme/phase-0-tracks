@@ -51,21 +51,26 @@ console.log(keysOfFirstObject);
 var keysOfSecondObject = Object.keys(secondObject);
 console.log(keysOfSecondObject);
 
-var matchingkey = "";
-  for (i = 0; i < keysOfFirstObject.length; i++ ) {
-    if (keysOfFirstObject[i] == keysOfSecondObject[i]) {
-    matchingkey = keysOfFirstObject[i];
-    console.log(matchingkey);
-      if (firstObject[keysOfFirstObject[i]] == secondObject[keysOfFirstObject[i]]) {
-        console.log("we found a key-value match");
-      }else{
-        console.log("only the keys are matching, the valued DO NOT");
-      }
-    }else{
-    console.log("No match in keys is found");
-    }
+var keyValueMatchFound = false;
+for (i = 0; i < keysOfFirstObject.length; i++ ) {
+ if (keysOfFirstObject[i] == keysOfSecondObject[i]) {
+  if (firstObject[keysOfFirstObject[i]] == secondObject[keysOfFirstObject[i]]) {
+    console.log("we found a key-value match");
+    keyValueMatchFound = true;
+    
+  }else{
+    console.log("only the keys are matching, the valued DO NOT");
+    keyValueMatchFound;
   }
+   }else{
+console.log("No match in keys is found");
+keyValueMatchFound;
+ }
 }
+console.log(keyValueMatchFound);
+return keyValueMatchFound;
+}
+
 //RELEASE 2:
 
 //Driver code:
@@ -78,5 +83,15 @@ console.log(longestOne(["amazing", "awesome", "this is incredible", "I am so ple
 var firstguy = {name: "Steven", age: 54};
 var secondguy = {name: "Tamir", age: 54};
 console.log(findKeyValueMatch(firstguy, secondguy));
+
+var dog1 = {name: "Fido", breed: "Shepherd"};
+var dog2 = {name: "Spotty", breed: "Shepherd"};
+var dog3 = {originalname: "Fido", breed: "Husky"};
+var dog4 = {name: "Fido", firstbreed: "Shepherd"};
+findKeyValueMatch(dog1, dog2); //true
+findKeyValueMatch(dog2, dog3); //false
+findKeyValueMatch(dog3, dog1); //false
+findKeyValueMatch(dog3, dog4); //false
+findKeyValueMatch(dog1, dog4); //true
 
 
