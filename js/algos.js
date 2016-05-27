@@ -29,12 +29,12 @@ var numbers = [];
      }
  }
 console.log(biggestNumber);
-indexOfTheLongestString = numbers.indexOf(biggestNumber)
-console.log(indexOfTheLongestString)  
-  // return longestSting
+indexOfTheLongestString = numbers.indexOf(biggestNumber);
+console.log(indexOfTheLongestString); 
+return array[indexOfTheLongestString];
 }
 
 //Driver code:
-longestOne(["long phrase","longest phrase","longer phrase"]);
-longestOne(["apple", "millions of apples", "two apples"]);
+console.log(longestOne(["long phrase","longest phrase","longer phrase"]));
+console.log(longestOne(["apple", "millions of apples", "two apples"]));
 
