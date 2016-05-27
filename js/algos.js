@@ -27,7 +27,10 @@ var numbers = [];
       var biggestNumber = numbers[ind+1];
       console.log(biggestNumber);
      }
- }  
+ }
+console.log(biggestNumber);
+indexOfTheLongestString = numbers.indexOf(biggestNumber)
+console.log(indexOfTheLongestString)  
   // return longestSting
 }
 
