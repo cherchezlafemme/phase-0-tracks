@@ -17,12 +17,20 @@
 //Business logic:
 function longestOne(array) {
 stringsNumber = array.length;
-for (var n = 0; n < stringsNumber; n++) {
-  console.log(array[n].length);
-    }
-// return longestString;
+var numbers = [];
+var minNumberOfStrings = 0;
+  for (var n = 0; n < stringsNumber; n++) {
+    numbers.push(array[n].length);
+    console.log(numbers)
+  }
+for (var ind = 0; ind <= stringsNumber; ind++){
+   if (numbers[ind] > minNumberOfStrings) {
+    var biggestNumber = numbers[ind];
+    console.log(biggestNumber);
+   }
+ }  
+  // return longestSting
 }
-
 
 //Driver code:
 longestOne(["long phrase","longest phrase","longer phrase"]);
