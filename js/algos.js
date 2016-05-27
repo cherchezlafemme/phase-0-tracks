@@ -7,6 +7,11 @@
 // Find out how many strings the given array has.
 // For each of the strings count the amount of letters and spaces inside them.
 // Compare this number of letter/spaces between each other and find out which one is the longest.
+    // create a new var with the number of the letters in a string, 
+    // add those var into the array one by one, 
+    // compare each number of array,
+    // find the biggest number and return it's index in the array,
+    // the string with the same index should be the longest string.
 // Return the one that is the longest.
 
 //Business logic:
@@ -22,3 +27,4 @@ for (var n = 0; n < stringsNumber; n++) {
 //Driver code:
 longestOne(["long phrase","longest phrase","longer phrase"]);
 longestOne(["apple", "millions of apples", "two apples"]);
+
