@@ -1,3 +1,4 @@
+// RELEASE 0:
 // Create a function that takes an array of words or phrases and returns the longest word or phrase in the array.
 // Input: an array of strings
 // Output: a string that is the longest from this array
@@ -15,6 +16,7 @@
 // Return the one that is the longest.
 
 //Business logic:
+//RELEASE 0:
 function longestOne(array) {
 var numbers = [];
   for (var n = 0; n < array.length; n++) {
@@ -29,7 +31,19 @@ var indexOfTheLongestString = numbers.indexOf(biggestNumber);
 return array[indexOfTheLongestString];
 }
 
+//RELEASE 1:
+
+//RELEASE 2:
+
 //Driver code:
 console.log(longestOne(["long phrase","longest phrase","longer phrase"]));
 console.log(longestOne(["apple", "millions of apples", "two apples"]));
 console.log(longestOne(["amazing", "awesome", "this is incredible", "I am so pleased that I have solved this!", "happy", "relieved"]))
+
+
+// function that takes two objects and checks to see if the objects share at least one key-value pair. 
+// If we called your function with {name: "Steven", age: 54} and {name: "Tamir", age: 54}, the function would return true, 
+// because at least one key-value pair matches between the two objects. 
+//If no pairs match (and keep in mind that the two objects may not even have any of the same keys), 
+//the function should return false. To make your life easier, don't worry about whether a property is a string ('age') 
+// or an identifier name (age). Those can be considered equivalent. 
