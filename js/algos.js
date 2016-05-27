@@ -16,25 +16,20 @@
 
 //Business logic:
 function longestOne(array) {
-stringsNumber = array.length;
 var numbers = [];
-  for (var n = 0; n < stringsNumber; n++) {
+  for (var n = 0; n < array.length; n++) {
     numbers.push(array[n].length);
-    console.log(numbers)
   }
-  for (var ind = 0; ind <= stringsNumber; ind++){
-    if (numbers[ind+1] > numbers[ind]) {
-      var biggestNumber = numbers[ind+1];
-      console.log(biggestNumber);
+  for (var ind = 0; ind <= array.length; ind++){
+    if (true == (numbers[ind] > numbers[ind+1])) {
+      var biggestNumber = numbers[ind];
      }
  }
-console.log(biggestNumber);
-indexOfTheLongestString = numbers.indexOf(biggestNumber);
-console.log(indexOfTheLongestString); 
+var indexOfTheLongestString = numbers.indexOf(biggestNumber);
 return array[indexOfTheLongestString];
 }
 
 //Driver code:
 console.log(longestOne(["long phrase","longest phrase","longer phrase"]));
 console.log(longestOne(["apple", "millions of apples", "two apples"]));
-
+console.log(longestOne(["amazing", "awesome", "this is incredible", "I am so pleased that I have solved this!", "happy", "relieved"]))
