@@ -9,5 +9,16 @@
 // Compare this number of letter/spaces between each other and find out which one is the longest.
 // Return the one that is the longest.
 
+//Business logic:
+function longestOne(array) {
+stringsNumber = array.length;
+for (var n = 0; n < stringsNumber; n++) {
+  console.log(array[n].length);
+    }
+// return longestString;
+}
 
 
+//Driver code:
+longestOne(["long phrase","longest phrase","longer phrase"]);
+longestOne(["apple", "millions of apples", "two apples"]);
