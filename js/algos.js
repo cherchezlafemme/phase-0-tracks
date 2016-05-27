@@ -15,6 +15,17 @@
     // the string with the same index should be the longest string.
 // Return the one that is the longest.
 
+// RELEASE 1:
+// Create a function that takes two objects and checks to see if the objects share at least one key-value pair. 
+// Input two objects
+// Output boolean
+
+// Pseudocode:
+// Start the function that takes two objects.
+// Find out if the objects has the same key.
+// If they do share same key, check if the values of this key from both the objects are matching. If this is the case, return true.
+// In any other case return false.
+
 //Business logic:
 //RELEASE 0:
 function longestOne(array) {
@@ -32,18 +43,21 @@ return array[indexOfTheLongestString];
 }
 
 //RELEASE 1:
+function findKeyValueMatch(firstObject, secondObject) {
+
+}
 
 //RELEASE 2:
 
 //Driver code:
+//RELEASE 0:
 console.log(longestOne(["long phrase","longest phrase","longer phrase"]));
 console.log(longestOne(["apple", "millions of apples", "two apples"]));
 console.log(longestOne(["amazing", "awesome", "this is incredible", "I am so pleased that I have solved this!", "happy", "relieved"]))
 
+//RELEASE 1:
+var firstguy = {name: "Steven", age: 54};
+var secondguy = {name: "Tamir", age: 54};
+console.log(findKeyValueMatch(firstguy, secondguy));
 
-// function that takes two objects and checks to see if the objects share at least one key-value pair. 
-// If we called your function with {name: "Steven", age: 54} and {name: "Tamir", age: 54}, the function would return true, 
-// because at least one key-value pair matches between the two objects. 
-//If no pairs match (and keep in mind that the two objects may not even have any of the same keys), 
-//the function should return false. To make your life easier, don't worry about whether a property is a string ('age') 
-// or an identifier name (age). Those can be considered equivalent. 
+
