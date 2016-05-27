@@ -18,16 +18,15 @@
 function longestOne(array) {
 stringsNumber = array.length;
 var numbers = [];
-var minNumberOfStrings = 0;
   for (var n = 0; n < stringsNumber; n++) {
     numbers.push(array[n].length);
     console.log(numbers)
   }
-for (var ind = 0; ind <= stringsNumber; ind++){
-   if (numbers[ind] > minNumberOfStrings) {
-    var biggestNumber = numbers[ind];
-    console.log(biggestNumber);
-   }
+  for (var ind = 0; ind <= stringsNumber; ind++){
+    if (numbers[ind+1] > numbers[ind]) {
+      var biggestNumber = numbers[ind+1];
+      console.log(biggestNumber);
+     }
  }  
   // return longestSting
 }
