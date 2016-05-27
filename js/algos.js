@@ -46,21 +46,26 @@ return array[indexOfTheLongestString];
 
 //RELEASE 1:
 function findKeyValueMatch(firstObject, secondObject) {
-// for each key find a matching key in the othe object
-//console.log(firstObject.key[1]);
-  var keysOfFirstObject = Object.keys(firstObject);
-  console.log(keysOfFirstObject);
-  var keysOfSecondObject = Object.keys(secondObject);
-  console.log(keysOfSecondObject);
-    for (i = 0; i < keysOfFirstObject.length; i++ ) {
-     if (keysOfFirstObject[i] == keysOfSecondObject[i]) {
-     console.log('true')
-     } else {
-     console.log('false')
-     }
-    }
-}
+var keysOfFirstObject = Object.keys(firstObject);
+console.log(keysOfFirstObject);
+var keysOfSecondObject = Object.keys(secondObject);
+console.log(keysOfSecondObject);
 
+var matchingkey = "";
+  for (i = 0; i < keysOfFirstObject.length; i++ ) {
+    if (keysOfFirstObject[i] == keysOfSecondObject[i]) {
+    matchingkey = keysOfFirstObject[i];
+    console.log(matchingkey);
+      if (firstObject[keysOfFirstObject[i]] == secondObject[keysOfFirstObject[i]]) {
+        console.log("we found a key-value match");
+      }else{
+        console.log("only the keys are matching, the valued DO NOT");
+      }
+    }else{
+    console.log("No match in keys is found");
+    }
+  }
+}
 //RELEASE 2:
 
 //Driver code:
