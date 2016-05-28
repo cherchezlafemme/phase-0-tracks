@@ -76,8 +76,30 @@ return keyValueMatchFound;
 }
 
 //RELEASE 2:
+      function randomNum () {
+        return Math.floor(Math.random() * (11 - 0) + 0);
+      }
 
+      function stringMaker() {
+      string = "";
+      var alphabet = "abcdefghijklmnopqrstuvwxyz";
+      for (var i = 0; i < 11; i++ ) 
+        string += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+      console.log(string);
+      return string;
+      }
 
+function generateArray(num) {
+  var array = [];
+  for (i=0; i < num; i++) {
+  string = '';
+  string.length = (getRandom() + 1);
+  console.log(string.length);
+  //create a random string
+  //push each string inside array
+}
+  console.log(array);
+}
 
 
 
