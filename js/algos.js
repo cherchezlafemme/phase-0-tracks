@@ -123,6 +123,20 @@ findKeyValueMatch(dog3, dog4); //false
 findKeyValueMatch(dog1, dog4); //true
 
 //RELEASE 2:
-//Add driver code that does the following 10 times: 
-//generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
-
+//I tried creating the loop so it prints it automatically, but for some reason it won't stop making arrays. 
+//Couldn't figure out why.
+//This is the loop:
+var num = 3;
+for (i = 10 ; i > 0; i--) {
+var myarray = generateArray(num);
+console.log(myarray);
+console.log(longestOne(myarray));
+}
+//Another version of the loop. It also runs non stop.
+function randomNumber() {
+return Math.floor(Math.random() * (11 - 1) + 1);
+}
+for (i = 1; i < 11; i ++) {
+console.log(longestOne(generateArray(randomNumber())));
+}
+//I spent a lot of time trying to solve the issue of infinite loop. Wasn't able to. Please, give me a hint in comments. I appreciate it!
