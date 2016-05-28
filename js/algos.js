@@ -17,8 +17,8 @@
 
 // RELEASE 1:
 // Create a function that takes two objects and checks to see if the objects share at least one key-value pair. 
-// Input two objects
-// Output boolean
+// Input: two objects
+// Output: boolean
 
 // Pseudocode:
 // Start the function that takes two objects.
@@ -27,6 +27,18 @@
   // Go one by one through these arrays and compare if the key names are matching.
 // If they do share same key, check if the values of this key from both the objects are matching. If this is the case, return true.
 // In any other case return false.
+
+//RELEASE 2:
+// Create a function that takes an integer for length, and builds and returns an array of strings of the given length. 
+// Input: integer
+// Output: array of strings
+
+// Pseudocode:
+// Start the function that takes an integer.
+// Create an array that will have the length of this integer (amount of strings will be equal to the integer given to function)
+// For each object in array generate a string that have from 1 to 10 letters in it.
+// replace the empty string inside the array with the new randomly generated strings.
+// Return the updated array.
 
 //Business logic:
 //RELEASE 0:
@@ -65,6 +77,10 @@ return keyValueMatchFound;
 
 //RELEASE 2:
 
+
+
+
+
 //Driver code:
 //RELEASE 0:
 console.log(longestOne(["long phrase","longest phrase","longer phrase"]));
@@ -86,4 +102,7 @@ findKeyValueMatch(dog3, dog1); //false
 findKeyValueMatch(dog3, dog4); //false
 findKeyValueMatch(dog1, dog4); //true
 
+//RELEASE 2:
+//Add driver code that does the following 10 times: 
+//generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
 
