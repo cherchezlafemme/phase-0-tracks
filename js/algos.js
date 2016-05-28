@@ -37,7 +37,7 @@
 // Start the function that takes an integer.
 // Create an array that will have the length of this integer (amount of strings will be equal to the integer given to function)
 // For each object in array generate a string that have from 1 to 10 letters in it.
-// replace the empty string inside the array with the new randomly generated strings.
+// Push the newly generated strings inside the array. Add the specific number of strings to array, this number should be equal the number given at input.
 // Return the updated array.
 
 //Business logic:
@@ -76,32 +76,30 @@ return keyValueMatchFound;
 }
 
 //RELEASE 2:
-      function randomNum () {
-        return Math.floor(Math.random() * (11 - 0) + 0);
-      }
-
+function generateArray(num) {
+  var array = [];
       function stringMaker() {
       string = "";
       var alphabet = "abcdefghijklmnopqrstuvwxyz";
-      for (var i = 0; i < 11; i++ ) 
+        for (var i = 0; i < 11; i++ ) {
         string += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-      console.log(string);
+        }
       return string;
       }
-
-function generateArray(num) {
-  var array = [];
-  for (i=0; i < num; i++) {
-  string = '';
-  string.length = (getRandom() + 1);
-  console.log(string.length);
-  //create a random string
-  //push each string inside array
+      function displayString(string) {
+        function randomNum () {
+        return Math.floor(Math.random() * (11 - 1) + 1);
+        }
+      newstring = string.substring(0, randomNum());
+      return newstring;
+      }
+for (i=0; i < num; i++) {
+stringMaker();
+array.push(displayString(string));
 }
-  console.log(array);
+console.log(array);
+return array;
 }
-
-
 
 //Driver code:
 //RELEASE 0:
