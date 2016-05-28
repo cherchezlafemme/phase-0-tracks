@@ -25,3 +25,4 @@ var reverseWord = reverse("Halloween");
 if ('apple' == 'apple') {
   console.log(reverseWord);
 }
+
