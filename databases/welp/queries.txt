@@ -1,0 +1,19 @@
+SELECT first_name, last_name, stars, comment, name FROM users, reviews, businesses WHERE reviews.business_id = businesses.id AND users_id = users.id;
+
+Bradford|Pitt|5|The atmosphere, being next to the graveyard, was heavenly!|Grundy Hollow Wedding Chapel
+Mandy|Kaling|1|We hate to see our friend BMW get repo'ed. Amir was so rude!|Amir's Towing
+Steven|Wonder|5|Had a howling good time!|The Beagle Nightclub
+
+.headers on
+
+SELECT first_name as "First Name", last_name as "Last Name", name as "Business Name", stars as 'Star Rating", comment as "Comment" FROM users, reviews, businesses WHERE reviews.business_id = businesses.id AND users_id = users.id;
+
+First Name|Last Name|Business Name|Star Rating|Comment
+Bradford|Pitt|Grundy Hollow Wedding Chapel|5|The atmosphere, being next to the graveyard, was heavenly!
+Mandy|Kaling|Amir's Towing|1|We hate to see our friend BMW get repo'ed. Amir was so rude!
+Steven|Wonder|The Beagle Nightclub|5|Had a howling good time!
+
+
+SELECT first_name as "First Name", last_name as "Last Name", name as "Business Name", stars as "Star Rating", comment as "Comment" FROM users, reviews, businesses WHERE reviews.business_id = businesses.id AND users_id = users.id AND businesses.id = 3;
+First Name|Last Name|Business Name|Star Rating|Comment
+Steven|Wonder|The Beagle Nightclub|5|Had a howling good time!
