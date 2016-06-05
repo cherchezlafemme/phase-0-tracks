@@ -1,0 +1,99 @@
+1. Display the information in one table (either table is fine).
+SELECT * FROM wines;
+1|Chateau Smith|Cabernet Sauvignon|2014|true|1
+2|Kung Fu Girl|Riesling|2014|true|1
+3|Sixto Frenchman Hills|Chardonnay|2013|true|3
+4|Moxee|Chardonnay|2012|false|3
+5|Substance|Cabernet Sauvignon|2014|true|6
+6|Secco Rose|Pinot Noir|2014|true|8
+7|The Beautiful|Syrah|2013|true|2
+8|Rock Garden|Syrah|2013|true|2
+9|Boom Boom!|Syrah|2014|true|1
+10|ViNO|Pinot Grigio|2014|false|4
+11|Charles & Charles|Chardonnay|2015|false|5
+12|EVE|Chardonnay|2015|true|1
+
+2.Update an item that meets some condition (you can choose a condition that makes sense).
+UPDATE wines SET released = "false" WHERE name = "Kung Fu Girl";
+UPDATE wines SET year = 2015 WHERE grape = "Pinot Grigio"; 
+
+3.Display the information in both tables using one query.
+SELECT * FROM wines, labels WHERE wines.label_id = labels.id;
+1|Chateau Smith|Cabernet Sauvignon|2014|true|1|1|Charles Smith
+2|Kung Fu Girl|Riesling|2014|false|1|1|Charles Smith
+3|Sixto Frenchman Hills|Chardonnay|2013|true|3|3|SIXTO
+4|Moxee|Chardonnay|2012|false|3|3|SIXTO
+5|Substance|Cabernet Sauvignon|2014|true|6|6|WInes of Substance
+6|Secco Rose|Pinot Noir|2014|true|8|8|Secco
+7|The Beautiful|Syrah|2013|true|2|2|K Vintners
+8|Rock Garden|Syrah|2013|true|2|2|K Vintners
+9|Boom Boom!|Syrah|2014|true|1|1|Charles Smith
+10|ViNO|Pinot Grigio|2015|false|4|4|Vino
+11|Charles & Charles|Chardonnay|2015|false|5|5|Charles & Charles
+12|EVE|Chardonnay|2015|true|1|1|Charles Smith
+
+SELECT wines.name, wines.grape, wines.year, wines.released, labels.name FROM wines JOIN labels ON wines.label_id = labels.id;
+1|Chateau Smith|Cabernet Sauvignon|2014|true|Charles Smith
+2|Kung Fu Girl|Riesling|2014|false|Charles Smith
+3|Sixto Frenchman Hills|Chardonnay|2013|true|SIXTO
+4|Moxee|Chardonnay|2012|false|SIXTO
+5|Substance|Cabernet Sauvignon|2014|true|WInes of Substance
+6|Secco Rose|Pinot Noir|2014|true|Secco
+7|The Beautiful|Syrah|2013|true|K Vintners
+8|Rock Garden|Syrah|2013|true|K Vintners
+9|Boom Boom!|Syrah|2014|true|Charles Smith
+10|ViNO|Pinot Grigio|2015|false|Vino
+11|Charles & Charles|Chardonnay|2015|false|Charles & Charles
+12|EVE|Chardonnay|2015|true|Charles Smith
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+SELECT wines.grape, wines.year, labels.name FROM wines JOIN labels ON wines.label_id = labels.id;
+Cabernet Sauvignon|2014|Charles Smith
+Riesling|2014|Charles Smith
+Chardonnay|2013|SIXTO
+Chardonnay|2012|SIXTO
+Cabernet Sauvignon|2014|WInes of Substance
+Pinot Noir|2014|Secco
+Syrah|2013|K Vintners
+Syrah|2013|K Vintners
+Syrah|2014|Charles Smith
+Pinot Grigio|2015|Vino
+Chardonnay|2015|Charles & Charles
+Chardonnay|2015|Charles Smith
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+DELETE FROM wines WHER released = "false";
+SELECT * FROM wines;
+1|Chateau Smith|Cabernet Sauvignon|2014|true|1
+3|Sixto Frenchman Hills|Chardonnay|2013|true|3
+5|Substance|Cabernet Sauvignon|2014|true|6
+6|Secco Rose|Pinot Noir|2014|true|8
+7|The Beautiful|Syrah|2013|true|2
+8|Rock Garden|Syrah|2013|true|2
+9|Boom Boom!|Syrah|2014|true|1
+12|EVE|Chardonnay|2015|true|1
+
+
+RELEASE 3:
+INNER JOIN:
+SELECT wines.name, labels.name FROM wines INNER JOIN labels ON wines.label_id = labels.id;
+Chateau Smith|Charles Smith
+Sixto Frenchman Hills|SIXTO
+Substance|WInes of Substance
+Secco Rose|Secco
+The Beautiful|K Vintners
+Rock Garden|K Vintners
+Boom Boom!|Charles Smith
+EVE|Charles Smith
+
+CROSS JOIN:
+SELECT wines.name, wines.grape, labels.name FROM wines CROSS JOIN labels ON wines.label_id = labels.id;
+name|grape|name
+Chateau Smith|Cabernet Sauvignon|Charles Smith
+Sixto Frenchman Hills|Chardonnay|SIXTO
+Substance|Cabernet Sauvignon|WInes of Substance
+Secco Rose|Pinot Noir|Secco
+The Beautiful|Syrah|K Vintners
+Rock Garden|Syrah|K Vintners
+Boom Boom!|Syrah|Charles Smith
+EVE|Chardonnay|Charles Smith
