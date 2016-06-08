@@ -57,3 +57,19 @@ POST request passes the form parameters in the body of the HTTP request, not in 
 
 ### Cookie. How does it relate to HTTP requests?
 
+Cookie is a small piece of data sent from a website and stored in the user's web browser while the user is browsing (and sometimes afterwards depending on the type of the cookie). 
+####Common uses of cookies:
+
+- session management: cookies remember stateful information, whe you started the session, what you added to the shopping card, etc.
+- tracking: cookies record the user's browsing activity (including clicking particular buttons, logging in, or recording which pages were visited in the past);
+- personalization: cookies remember arbitrary pieces of information that the user previously entered into form fields such as names, addresses, passwords, and credit card numbers.
+
+When receiving an HTTP request, a server can send a Set-Cookie header with the response. Afterward, the cookie value is sent along with every request made to the same server in the form of a Cookie HTTP header. Additionally, an expiration delay can be specified. Restrictions to a specific domain and path can be specified as well.
+
+>The server sends a **Set-Cookie: name=value** in its response header to set the field. If there is a cookie set then the browser sends a **Cookie: name=value** in its request header.
+
+
+
+
+
+
