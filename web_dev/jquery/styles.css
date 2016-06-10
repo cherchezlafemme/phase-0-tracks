@@ -29,3 +29,7 @@ footer {
 #main_story {
   visibility: hidden;
 }
+
+#conclusion {
+  visibility: hidden;
+}

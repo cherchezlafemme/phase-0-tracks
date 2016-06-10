@@ -1,7 +1,7 @@
 // DONE class="reader_talk" gets bigger text, changes color when the mouse clicks
 // DONE class="writer_answer" gets a different color when mouse clicks
-// id="intro" becomes smaller once you scroll down
-// id="main_story" appears
+// Wasn't able to do this one: id="intro" becomes smaller once you scroll down
+// DONE id="main_story" appears
 
 // DONE id="collaps" Make the sentence with the word world disappear.
 
@@ -10,7 +10,7 @@
 
 // id="magic_elephant" double click on elephant picture turns him into a picture of a fly
 
-// id="conclusion" Reveal only at the end
+// DONE id="conclusion" Reveal only at the end
 // id="fly_away" Hides the fly image from the page
 
 console.log("Script is working");
@@ -24,13 +24,10 @@ $(document).ready(function(){
     $(this).css("background-color", "#CCCCFF").css("font-size", "18px").css("padding", "10px");
   });
 
-  //$("#into").scroll(function(){
-  //  $(this).css("background-color", "pink");
-  //});
-
   $("h2").click(function(){
-    ("#main_story").css("visibility", "visible")
+    $("#main_story").css("visibility", "visible");
   });
+
 
   $("#collaps").click(function(){
     $("strong").hide();
@@ -41,4 +38,10 @@ $(document).ready(function(){
     $("#thoughts").append(" <b>My world is ending! The elephant just killed it!</b>")
     $("b").css("font-size", "25px");
   });
+
+  $("#end").click(function(){
+  $("#conclusion").css("visibility", "visible");
+  });
+
 });
+
