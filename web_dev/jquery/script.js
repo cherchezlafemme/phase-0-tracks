@@ -28,7 +28,6 @@ $(document).ready(function(){
     $("#main_story").css("visibility", "visible");
   });
 
-
   $("#collaps").click(function(){
     $("strong").hide();
     $(this).css("font-size", "30px");
@@ -37,6 +36,10 @@ $(document).ready(function(){
   $("#thoughts_of_man").click(function(){
     $("#thoughts").append(" <b>My world is ending! The elephant just killed it!</b>")
     $("b").css("font-size", "25px");
+  });
+
+  $("#elephant_enters").click(function(){
+    $("img").show().css("visibility","visible");
   });
 
   $("#end").click(function(){

@@ -33,3 +33,11 @@ footer {
 #conclusion {
   visibility: hidden;
 }
+
+img {
+  position: relative;
+  display: block;
+  margin: auto;
+  padding: 20px;
+  display: none;
+}
