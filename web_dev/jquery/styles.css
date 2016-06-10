@@ -25,3 +25,7 @@ footer {
   font-size: 10px;
   text-align: right;
 }
+
+#main_story {
+  visibility: hidden;
+}

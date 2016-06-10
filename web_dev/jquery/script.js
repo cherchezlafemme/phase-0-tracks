@@ -24,6 +24,14 @@ $(document).ready(function(){
     $(this).css("background-color", "#CCCCFF").css("font-size", "18px").css("padding", "10px");
   });
 
+  //$("#into").scroll(function(){
+  //  $(this).css("background-color", "pink");
+  //});
+
+  $("h2").click(function(){
+    ("#main_story").css("visibility", "visible")
+  });
+
   $("#collaps").click(function(){
     $("strong").hide();
     $(this).css("font-size", "30px");
