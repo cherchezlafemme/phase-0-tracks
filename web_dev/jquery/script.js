@@ -13,9 +13,18 @@
 // id="conclusion" Reveal only at the end
 // id="fly_away" Hides the fly image from the page
 
+console.log("Script is working");
+
 $(document).ready(function(){
   $(".reader_talk").click(function(){
-    $(this).css("background-color", "#989898")
+    $(this).css("background-color", "#989898");
   });
 
+  $("#collaps").click(function(){
+    $("strong").hide();
+  });
+
+  $("#thoughts_of_man").click(function(){
+    $("p").append("<b>My world is ending! The elephant just killed it!</b>.");
+  });
 });
