@@ -11,7 +11,7 @@
 // DONE on elephant picture turns him into a picture of a fly
 
 // DONE id="conclusion" Reveal only at the end
-//  id="fly_away" Hides the fly image from the page
+// DONE id="fly_away" Hides the fly image from the page
 
 console.log("Script is working");
 
@@ -47,7 +47,11 @@ $(document).ready(function(){
   });
 
   $("#end").click(function(){
-  $("#conclusion").css("visibility", "visible");
+    $("#conclusion").css("visibility", "visible");
+  });
+
+  $("#fly_away").click(function(){
+    $("#elephant_image").css("display", "none");
   });
 
 });
