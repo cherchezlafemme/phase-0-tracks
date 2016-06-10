@@ -5,13 +5,13 @@
 
 // DONE id="collaps" Make the sentence with the word world disappear.
 
-// button id="elephant_enters" makes a photo of elephant appear
+// DONE button id="elephant_enters" makes a photo of elephant appear
 // DONE button id="thoughts_of_man" will reveal "My world is ending! The elephant just killed it!"
 
-// id="magic_elephant" double click on elephant picture turns him into a picture of a fly
+// DONE on elephant picture turns him into a picture of a fly
 
 // DONE id="conclusion" Reveal only at the end
-// id="fly_away" Hides the fly image from the page
+//  id="fly_away" Hides the fly image from the page
 
 console.log("Script is working");
 
@@ -39,7 +39,11 @@ $(document).ready(function(){
   });
 
   $("#elephant_enters").click(function(){
-    $("img").show().css("visibility","visible");
+    $("#elephant_image").css("display","block");
+  });
+
+  $("#elephant_image").click(function(){
+      $(this).attr('src', "fly.jpg").css("display", "block");
   });
 
   $("#end").click(function(){
