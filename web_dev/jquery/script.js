@@ -1,12 +1,12 @@
-// class="reader_talk" gets bigger text, changes color when the mouse is over it
-// class="writer_answer" gets a different color when mouse is over it
+// DONE class="reader_talk" gets bigger text, changes color when the mouse clicks
+// DONE class="writer_answer" gets a different color when mouse clicks
 // id="intro" becomes smaller once you scroll down
 // id="main_story" appears
 
-// id="collaps" Make the word world disappear.
+// DONE id="collaps" Make the sentence with the word world disappear.
 
 // button id="elephant_enters" makes a photo of elephant appear
-// button id="thoughts_of_man" will reveal "My world is ending! The elephant just killed it!"
+// DONE button id="thoughts_of_man" will reveal "My world is ending! The elephant just killed it!"
 
 // id="magic_elephant" double click on elephant picture turns him into a picture of a fly
 
@@ -17,14 +17,20 @@ console.log("Script is working");
 
 $(document).ready(function(){
   $(".reader_talk").click(function(){
-    $(this).css("background-color", "#989898");
+    $(this).css("background-color", "#CC99FF").css("font-size", "18px").css("padding", "10px");
+  });
+
+  $(".writer_answer").click(function(){
+    $(this).css("background-color", "#CCCCFF").css("font-size", "18px").css("padding", "10px");
   });
 
   $("#collaps").click(function(){
     $("strong").hide();
+    $(this).css("font-size", "30px");
   });
 
   $("#thoughts_of_man").click(function(){
-    $("p").append("<b>My world is ending! The elephant just killed it!</b>.");
+    $("#thoughts").append(" <b>My world is ending! The elephant just killed it!</b>")
+    $("b").css("font-size", "25px");
   });
 });
