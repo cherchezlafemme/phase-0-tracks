@@ -17,8 +17,8 @@ get '/students/new' do
   erb :new_student
 end
 
-get '/students/delete' do
-  erb :detele_student
+get '/students/to_delete' do
+  erb :delete_student
 end
 
 # create new students via
@@ -29,8 +29,8 @@ post '/students' do
 end
 
 post '/students/delete' do
-  name_to_delete = params[:name]
-  db.execute("DELETE FROM students WHERE name = (?)", [name_to_delete])
+  name_to_delete = params['name']
+  db.execute("DELETE FROM students WHERE name = (?)", [name_to_delete.to_s])
   redirect '/'
 end
 
