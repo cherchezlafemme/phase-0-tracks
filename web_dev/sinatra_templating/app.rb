@@ -17,10 +17,20 @@ get '/students/new' do
   erb :new_student
 end
 
+get '/students/to_delete' do
+  erb :delete_student
+end
+
 # create new students via
 # a form
 post '/students' do
   db.execute("INSERT INTO students (name, campus, age) VALUES (?,?,?)", [params['name'], params['campus'], params['age'].to_i])
+  redirect '/'
+end
+
+post '/students/delete' do
+  name_to_delete = params['name']
+  db.execute("DELETE FROM students WHERE name = (?)", [name_to_delete.to_s])
   redirect '/'
 end
 
