@@ -75,3 +75,17 @@ get '/add/:number1/:number2' do
   "#{x} + #{y} = #{sum}"
 end
 
+# Make a route that allows the user to search the database in some way --
+# maybe for students who have a certain first name, or some other attribute. 
+
+get '/attending/:campus' do
+  students_at_campus = db.execute("SELECT * FROM students WHERE campus=?", [params[:campus]])
+  list_of_students_at_campus = ""
+  students_at_campus.each do |student|
+    list_of_students_at_campus << "ID: #{student['id']}<br>"
+    list_of_students_at_campus << "Name: #{student['name']}<br>"
+    list_of_students_at_campus << "Age: #{student['age']}<br><br>"
+  end
+  "This is the list of students that will be attending #{params[:campus]}"
+  list_of_students_at_campus 
+end
